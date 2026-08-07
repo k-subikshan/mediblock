@@ -12,9 +12,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import meciblock.main.Service.UserService;
+
 @Configuration
 @EnableWebSecurity
 public class SpringSecurity {
+    SuccessHandelr successHandler = new SuccessHandelr();
+    private final UserService customUserDetailsService;
+    SpringSecurity(SuccessHandelr successHandler, UserService customUserDetailsService) {
+        this.successHandler = successHandler;
+        this.customUserDetailsService = customUserDetailsService;
+    }
+
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
         UserDetails user = User.builder()
@@ -31,6 +40,7 @@ public PasswordEncoder passwordEncoder() {
  
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        
 
         return http
         .formLogin(httpform->{
@@ -38,7 +48,7 @@ public PasswordEncoder passwordEncoder() {
             .loginPage("/login")
             .loginProcessingUrl("/login")
             .failureUrl("/login?error=true")
-            .defaultSuccessUrl("/home")
+            .successHandler(successHandler)
             .permitAll();
         })
         .authorizeHttpRequests(auth->{
