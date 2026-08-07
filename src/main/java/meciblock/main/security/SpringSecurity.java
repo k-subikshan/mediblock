@@ -18,10 +18,8 @@ import meciblock.main.Service.UserService;
 @EnableWebSecurity
 public class SpringSecurity {
     SuccessHandelr successHandler = new SuccessHandelr();
-    private final UserService customUserDetailsService;
     SpringSecurity(SuccessHandelr successHandler, UserService customUserDetailsService) {
         this.successHandler = successHandler;
-        this.customUserDetailsService = customUserDetailsService;
     }
 
     @Bean
