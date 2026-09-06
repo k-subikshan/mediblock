@@ -15,13 +15,11 @@ import meciblock.main.Service.UserService;
 public class SpringSecurity {
 
     private final SuccessHandelr successHandler;
-    private final UserService userService;
     public SpringSecurity(
             SuccessHandelr successHandler,
             UserService userService) {
 
         this.successHandler = successHandler;
-        this.userService = userService;
     }
 
     @Bean
@@ -51,7 +49,11 @@ public class SpringSecurity {
                     .requestMatchers("/images/**").permitAll()
                     .anyRequest().authenticated();
             })
-
+            .logout(logout -> logout
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/login?logout=true")
+                .permitAll()
+            )
             .build();
     }
 }

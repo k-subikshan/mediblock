@@ -39,9 +39,21 @@ public class SuccessHandelr implements AuthenticationSuccessHandler {
                 response.sendRedirect("/admin");
                 return;
             }
+            else if (authority.getAuthority().equals("ROLE_patient")) {
+                response.sendRedirect("/home");
+                return;
+            }
+            else if(authority.getAuthority().equals("ROLE_doctor")) {
+                response.sendRedirect("/doctor");
+                return;
+            }
+            else if(authority.getAuthority().equals("ROLE_pharmacist")) {
+                response.sendRedirect("/pharmacist");
+                return;
+            }
         }
 
-        response.sendRedirect("/home");
+        response.sendRedirect("/login?error=true");
     }
 }
     
