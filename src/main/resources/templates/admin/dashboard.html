@@ -1,11 +1,68 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Admin Dashboard | MedChain</title><link rel="stylesheet" href="../style.css"></head>
-<body><div class="app"><aside class="sidebar"><div class="brand"><div class="logo">MC</div>MedChain</div>
-<nav class="nav"><a class="active" href="dashboard.html">Dashboard</a><a class="" href="users.html">Users</a><a class="" href="blockchain.html">Blockchain Ledger</a><a class="" href="audit.html">Audit History</a></nav><div class="profile"><div class="avatar">A</div><div><b>Administrator</b><small>Portal</small></div></div></aside>
-<main class="main"><header class="topbar"><div><button class="icon-btn menu-toggle" onclick="toggleMenu()">☰</button><h2>Admin Dashboard</h2></div><div class="top-actions"><button class="icon-btn" onclick="toast('No new notifications')">🔔</button><div class="user-menu"><button class="user-btn" onclick="toggleUserMenu()"><div class="avatar">A</div><div class="usertext"><b>Admin</b><small>Administrator</small></div><span>⌄</span></button><div class="user-dropdown" id="userDropdown"><a href="dashboard.html">👤 Profile</a><a href="dashboard.html">⚙ Settings</a><div class="dropdown-divider"></div><button onclick="logout()">↪ Logout</button></div></div></div></header>
-<section class="content">
-<div class="hero"><h1>MedChain Administration</h1><p>Monitor users, medicine records, blockchain integrity and system activity.</p></div>
-<div class="grid stats"><div class="card stat"><span class="label">Total Users</span><div class="value">1,284</div><span class="trend">All roles</span></div><div class="card stat"><span class="label">Medicine Records</span><div class="value">8,420</div><span class="trend">Traceable</span></div><div class="card stat"><span class="label">Blockchain Records</span><div class="value">12,890</div><span class="trend">Anchored</span></div><div class="card stat"><span class="label">Flagged Records</span><div class="value">03</div><span class="trend">Needs review</span></div></div>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Admin Dashboard | MedChain</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}" >
+    </head>
+    <body>
+        <div class="app">
+            <aside class="sidebar">
+                <div class="brand">
+                    <div class="logo">MC</div>
+                    MedChain
+                </div>
+                <nav class="nav">
+                    <a class="active" th:href="@{/admin}">Dashboard</a>
+                    <a class="" href="users.html">Users</a>
+                    <a class="" href="blockchain.html">Blockchain Ledger</a>
+                    <a class="" href="audit.html">Audit History</a>
+                </nav>
+                <div class="profile">
+                    <div class="avatar">A</div>
+                    <div>
+                        <b>Administrator</b>
+                        <small>Portal</small>
+                    </div>
+                </div>
+            </aside>
+            <main class="main">
+                <header class="topbar">
+                    <div>
+                        <button class="icon-btn menu-toggle" onclick="toggleMenu()">☰</button>
+                        <h2>Admin Dashboard</h2>
+                    </div>
+                    <div class="top-actions">
+                        <button class="icon-btn" onclick="toast('No new notifications')">🔔</button>
+                        <div class="user-menu">
+                            <button class="user-btn" onclick="toggleUserMenu()">
+                                <div class="avatar">A</div>
+                                <div class="usertext">
+                                    <b>Admin</b>
+                                    <small>Administrator</small>
+                                </div>
+                                <span>⌄</span>
+                            </button>
+                            <div class="user-dropdown" id="userDropdown">
+                                <a href="dashboard.html">👤 Profile</a>
+                                <a href="dashboard.html">⚙ Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <button onclick="logout()">↪ Logout</button>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <section class="content">
+<div class="hero">
+    <h1>MedChain Administration</h1>
+    <p>Monitor users, medicine records, blockchain integrity and system activity.</p>
+</div>
+<div class="grid stats">
+    <div class="card stat">
+        <span class="label">Total Users</span>
+        <div class="value">1,284</div>
+        <span class="trend">All roles</span></div>
+        <div class="card stat"><span class="label">Medicine Records</span><div class="value">8,420</div><span class="trend">Traceable</span></div><div class="card stat"><span class="label">Blockchain Records</span><div class="value">12,890</div><span class="trend">Anchored</span></div><div class="card stat"><span class="label">Flagged Records</span><div class="value">03</div><span class="trend">Needs review</span></div></div>
 <div class="section-head"><h2>System Overview</h2></div><div class="grid two"><div class="card"><h3>Verification Status</h3><div class="grid three"><div><b>98.7%</b><p class="muted">Valid</p></div><div><b>1.0%</b><p class="muted">Pending</p></div><div><b>0.3%</b><p class="muted">Flagged</p></div></div></div><div class="card"><h3>Blockchain</h3><p><span class="badge ok">Ethereum Connected</span></p><p class="muted" style="margin-top:10px">Latest block: #18,492,721</p></div></div>
 </section></main></div><div class="modal-bg"><div class="modal"></div></div><div class="toast"></div><script src="../script.js"></script></body></html>

@@ -11,7 +11,7 @@ public class AdminController {
     @GetMapping("/admin")
     public String getMethodName(Authentication authenticator,Model model) {
         model.addAttribute("username", authenticator.getName());
-        return "admin";
+        return "admin/dashboard";
     }
     
     
