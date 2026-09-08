@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Patients | MedChain</title><link rel="stylesheet" href="../style.css"></head>
+<body><div class="app"><aside class="sidebar"><div class="brand"><div class="logo">MC</div>MedChain</div>
+<nav class="nav"><a class="" href="dashboard.html">Dashboard</a><a class="" href="prescriptions.html">Prescriptions</a><a class="active" href="patients.html">Patients</a><a class="" href="create-prescription.html">Create Prescription</a></nav><div class="profile"><div class="avatar">D</div><div><b>Doctor</b><small>Portal</small></div></div></aside>
+<main class="main"><header class="topbar"><div><button class="icon-btn menu-toggle" onclick="toggleMenu()">☰</button><h2>Patients</h2></div><div class="top-actions"><button class="icon-btn" onclick="toast('No new notifications')">🔔</button><div class="user-menu"><button class="user-btn" onclick="toggleUserMenu()"><div class="avatar">A</div><div class="usertext"><b>Doctor</b><small>Doctor Portal</small></div><span>⌄</span></button><div class="user-dropdown" id="userDropdown"><a href="dashboard.html">👤 Profile</a><a href="dashboard.html">⚙ Settings</a><div class="dropdown-divider"></div><button onclick="logout()">↪ Logout</button></div></div></div></header>
+<section class="content">
+<div class="hero"><h1>My Patients</h1><p>Patient records associated with your prescriptions.</p></div>
+<div class="card table-wrap"><table><tr><th>Patient ID</th><th>Name</th><th>Age</th><th>Active Prescriptions</th><th>Status</th></tr><tr><td>P-1021</td><td>Ananya Rao</td><td>24</td><td>2</td><td><span class="badge ok">Active</span></td></tr><tr><td>P-1008</td><td>Rahul Kumar</td><td>31</td><td>1</td><td><span class="badge ok">Active</span></td></tr><tr><td>P-1015</td><td>Meera S</td><td>28</td><td>3</td><td><span class="badge warn">Review</span></td></tr></table></div>
+</section></main></div><div class="modal-bg"><div class="modal"></div></div><div class="toast"></div><script src="../script.js"></script></body></html>
