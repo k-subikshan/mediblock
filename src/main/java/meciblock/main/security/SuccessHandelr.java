@@ -36,7 +36,7 @@ public class SuccessHandelr implements AuthenticationSuccessHandler {
             );
 
             if (authority.getAuthority().equals("ROLE_admin")) {
-                response.sendRedirect("/admin");
+                response.sendRedirect("/admin/dashboard");
                 return;
             }
             else if (authority.getAuthority().equals("ROLE_patient")) {
@@ -44,7 +44,7 @@ public class SuccessHandelr implements AuthenticationSuccessHandler {
                 return;
             }
             else if(authority.getAuthority().equals("ROLE_doctor")) {
-                response.sendRedirect("/doctor");
+                response.sendRedirect("/doctor/dashboard");
                 return;
             }
             else if(authority.getAuthority().equals("ROLE_pharmacist")) {
