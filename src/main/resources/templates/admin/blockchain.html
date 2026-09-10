@@ -1,11 +1,180 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Blockchain Ledger | MedChain</title><link rel="stylesheet" href="../style.css"></head>
-<body><div class="app"><aside class="sidebar"><div class="brand"><div class="logo">MC</div>MedChain</div>
-<nav class="nav"><a class="" href="dashboard.html">Dashboard</a><a class="" href="users.html">Users</a><a class="active" href="blockchain.html">Blockchain Ledger</a><a class="" href="audit.html">Audit History</a></nav><div class="profile"><div class="avatar">A</div><div><b>Administrator</b><small>Portal</small></div></div></aside>
-<main class="main"><header class="topbar"><div><button class="icon-btn menu-toggle" onclick="toggleMenu()">☰</button><h2>Blockchain Ledger</h2></div><div class="top-actions"><button class="icon-btn" onclick="toast('No new notifications')">🔔</button><div class="user-menu"><button class="user-btn" onclick="toggleUserMenu()"><div class="avatar">A</div><div class="usertext"><b>Admin</b><small>Administrator</small></div><span>⌄</span></button><div class="user-dropdown" id="userDropdown"><a href="dashboard.html">👤 Profile</a><a href="dashboard.html">⚙ Settings</a><div class="dropdown-divider"></div><button onclick="logout()">↪ Logout</button></div></div></div></header>
-<section class="content">
-<div class="hero"><h1>Blockchain Ledger ⛓️</h1><p>Ethereum stores cryptographic hashes/references rather than sensitive healthcare records.</p></div>
-<div class="grid stats"><div class="card stat"><span class="label">Network</span><div class="value" style="font-size:20px">Ethereum</div><span class="trend">Connected</span></div><div class="card stat"><span class="label">Block Height</span><div class="value">18,492,721</div></div><div class="card stat"><span class="label">Transactions</span><div class="value">12,890</div></div><div class="card stat"><span class="label">Integrity</span><div class="value">100%</div><span class="trend">No mismatch</span></div></div>
-<div class="section-head"><h2>Recent Ledger Entries</h2></div><div class="card table-wrap"><table><tr><th>TX Hash</th><th>Record Type</th><th>Block</th><th>Status</th></tr><tr><td>0x8fa2...91bc</td><td>Medicine</td><td>18492721</td><td><span class="badge ok">Confirmed</span></td></tr><tr><td>0x4b72...18aa</td><td>Prescription</td><td>18492718</td><td><span class="badge ok">Confirmed</span></td></tr><tr><td>0x91dc...33ef</td><td>Purchase</td><td>18492712</td><td><span class="badge ok">Confirmed</span></td></tr></table></div>
-</section></main></div><div class="modal-bg"><div class="modal"></div></div><div class="toast"></div><script src="../script.js"></script></body></html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/admin/base}">
+
+<head>
+
+    <title>Blockchain Ledger</title>
+
+</head>
+
+<body>
+
+    <h2 layout:fragment="page-title">
+        Blockchain Ledger
+    </h2>
+
+
+    <section layout:fragment="content">
+
+        <div class="hero">
+
+            <h1>
+                Blockchain Ledger ⛓️
+            </h1>
+
+            <p>
+                Ethereum stores cryptographic hashes/references
+                rather than sensitive healthcare records.
+            </p>
+
+        </div>
+
+
+        <div class="grid stats">
+
+            <div class="card stat">
+
+                <span class="label">
+                    Network
+                </span>
+
+                <div class="value">
+                    Ethereum
+                </div>
+
+                <span class="trend">
+                    Connected
+                </span>
+
+            </div>
+
+
+            <div class="card stat">
+
+                <span class="label">
+                    Block Height
+                </span>
+
+                <div class="value">
+                    18,492,721
+                </div>
+
+            </div>
+
+
+            <div class="card stat">
+
+                <span class="label">
+                    Transactions
+                </span>
+
+                <div class="value">
+                    12,890
+                </div>
+
+            </div>
+
+
+            <div class="card stat">
+
+                <span class="label">
+                    Integrity
+                </span>
+
+                <div class="value">
+                    100%
+                </div>
+
+                <span class="trend">
+                    No mismatch
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="section-head">
+
+            <h2>
+                Recent Ledger Entries
+            </h2>
+
+        </div>
+
+
+        <div class="card table-wrap">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>TX Hash</th>
+                        <th>Record Type</th>
+                        <th>Block</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>0x8fa2...91bc</td>
+                        <td>Medicine</td>
+                        <td>18492721</td>
+
+                        <td>
+                            <span class="badge ok">
+                                Confirmed
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>0x4b72...18aa</td>
+                        <td>Prescription</td>
+                        <td>18492718</td>
+
+                        <td>
+                            <span class="badge ok">
+                                Confirmed
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>0x91dc...33ef</td>
+                        <td>Purchase</td>
+                        <td>18492712</td>
+
+                        <td>
+                            <span class="badge ok">
+                                Confirmed
+                            </span>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

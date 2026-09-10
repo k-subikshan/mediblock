@@ -5,6 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+
+
+
 @Controller 
 @RequestMapping("/admin")
 public class AdminController {
@@ -13,10 +17,20 @@ public class AdminController {
         model.addAttribute("username", authenticator.getName());
         return "admin/dashboard";
     }
-    @GetMapping("/audit")
-    public String getMethodName() {
-        return "admin/audit";
+    @GetMapping("/blockchain")
+    public String getBlockChain(Authentication authenticator,Model model) {
+        return "admin/blockchain";
     }
+    @GetMapping("/audit")
+    public String getAudit(Authentication authenticator,Model model) {
+        return "admin/audit";
+
+    }
+    @GetMapping("/users")
+    public String getUsers(Authentication authenticator,Model model) {
+        return "admin/users";
+    }
+    
     
     
     
