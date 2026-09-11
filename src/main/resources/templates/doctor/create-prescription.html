@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Create Prescription | MedChain</title><link rel="stylesheet" href="../style.css"></head>
-<body><div class="app"><aside class="sidebar"><div class="brand"><div class="logo">MC</div>MedChain</div>
-<nav class="nav"><a class="" href="dashboard.html">Dashboard</a><a class="" href="prescriptions.html">Prescriptions</a><a class="" href="patients.html">Patients</a><a class="active" href="create-prescription.html">Create Prescription</a></nav><div class="profile"><div class="avatar">D</div><div><b>Doctor</b><small>Portal</small></div></div></aside>
-<main class="main"><header class="topbar"><div><button class="icon-btn menu-toggle" onclick="toggleMenu()">☰</button><h2>Create Prescription</h2></div><div class="top-actions"><button class="icon-btn" onclick="toast('No new notifications')">🔔</button><div class="user-menu"><button class="user-btn" onclick="toggleUserMenu()"><div class="avatar">A</div><div class="usertext"><b>Doctor</b><small>Doctor Portal</small></div><span>⌄</span></button><div class="user-dropdown" id="userDropdown"><a href="dashboard.html">👤 Profile</a><a href="dashboard.html">⚙ Settings</a><div class="dropdown-divider"></div><button onclick="logout()">↪ Logout</button></div></div></div></header>
-<section class="content">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/doctor/base}"><head>
+<title>Create Prescription | MedChain</title></head>
+<body><section class="content" layout:fragment="content">
 <div class="hero"><h1>Create Prescription</h1><p>The prescription will later be hashed and registered through the backend blockchain service.</p></div>
 <div class="card"><form data-demo="Prescription created successfully. Backend will generate the blockchain transaction."><div class="form-grid">
 <div class="field"><label>Patient ID</label><input required placeholder="P-1021"></div><div class="field"><label>Patient Name</label><input required placeholder="Patient name"></div>
@@ -12,4 +9,4 @@
 <div class="field"><label>Quantity</label><input type="number" required placeholder="10"></div><div class="field"><label>Dosage</label><input required placeholder="1 tablet twice daily"></div>
 <div class="field"><label>Prescription Date</label><input type="date" required></div><div class="field"><label>Valid Until</label><input type="date" required></div></div>
 <div class="field"><label>Doctor Instructions</label><textarea placeholder="Instructions"></textarea></div><button class="btn">Create & Secure Prescription</button></form></div>
-</section></main></div><div class="modal-bg"><div class="modal"></div></div><div class="toast"></div><script src="../script.js"></script></body></html>
+</section></body></html>

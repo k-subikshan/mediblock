@@ -3,6 +3,8 @@ package meciblock.main.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @Controller 
@@ -12,5 +14,18 @@ public class DoctorController {
     public String getMethodName() {
         return "doctor/dashboard";
     }
+    @GetMapping("/patients")
+    public String getPatients() {
+        return "doctor/patients";
+    }
+    @GetMapping("/create-prescription")
+    public String getCreatePrescription() {
+        return "doctor/create-prescription";
+    }
+    @GetMapping("/prescriptions")
+    public String getPrescriptions() {
+        return "doctor/prescriptions";
+    }
+    
     
 }

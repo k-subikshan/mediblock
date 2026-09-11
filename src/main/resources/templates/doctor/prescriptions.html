@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Prescriptions | MedChain</title><link rel="stylesheet" href="../style.css"></head>
-<body><div class="app"><aside class="sidebar"><div class="brand"><div class="logo">MC</div>MedChain</div>
-<nav class="nav"><a class="" href="dashboard.html">Dashboard</a><a class="active" href="prescriptions.html">Prescriptions</a><a class="" href="patients.html">Patients</a><a class="" href="create-prescription.html">Create Prescription</a></nav><div class="profile"><div class="avatar">D</div><div><b>Doctor</b><small>Portal</small></div></div></aside>
-<main class="main"><header class="topbar"><div><button class="icon-btn menu-toggle" onclick="toggleMenu()">☰</button><h2>Prescriptions</h2></div><div class="top-actions"><button class="icon-btn" onclick="toast('No new notifications')">🔔</button><div class="user-menu"><button class="user-btn" onclick="toggleUserMenu()"><div class="avatar">A</div><div class="usertext"><b>Doctor</b><small>Doctor Portal</small></div><span>⌄</span></button><div class="user-dropdown" id="userDropdown"><a href="dashboard.html">👤 Profile</a><a href="dashboard.html">⚙ Settings</a><div class="dropdown-divider"></div><button onclick="logout()">↪ Logout</button></div></div></div></header>
-<section class="content">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/doctor/base}"><head>
+<title>Prescriptions | MedChain</title></head>
+<body><section class="content" layout:fragment="content">
 <div class="hero"><h1>Prescription Management</h1><p>View and monitor prescriptions issued by you.</p></div>
 <div class="card"><input class="search" placeholder="Search prescription ID or patient ID" oninput="toast('Search ready for backend integration')"></div>
 <div class="section-head"><h2>Prescription Records</h2></div><div class="card table-wrap"><table><tr><th>Prescription ID</th><th>Patient</th><th>Medicine</th><th>Quantity</th><th>Validity</th><th>Status</th></tr>
 <tr><td>RX-1042</td><td>P-1021</td><td>Amoxicillin</td><td>10</td><td>30 Sep 2026</td><td><span class="badge ok">Active</span></td></tr><tr><td>RX-1039</td><td>P-1004</td><td>Ibuprofen</td><td>6</td><td>20 Sep 2026</td><td><span class="badge ok">Active</span></td></tr></table></div>
-</section></main></div><div class="modal-bg"><div class="modal"></div></div><div class="toast"></div><script src="../script.js"></script></body></html>
+</section></body></html>
